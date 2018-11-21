@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require bootstrap/dist/css/bootstrap.css
+ *= require_tree .
+ *= require_self
+ */
+ 
+body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+      margin: 1px;
+  }
+  
+.menu{
+   color: white;
+}
+
+li{
+    list-style:none;
+}
+
+footer {
+  width: 100%;
+  background-color:#4169E1;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: relative;
+  bottom: 0;
+}
+
+.row {
+  position: relative;
+  bottom: 0;
+}
+
+header {
+  
+  background-color: #4169E1;
+  height: 75px;
+  
+}
+.profilelogo{
+   max-height:50px;
+   max-width:50px;
+   border-radius: 50%;
+}
+.form-inline{
+   height: 1%;
+   width:200px;
+}
+header a {
+  margin: auto;
+  list-style: none;
+}
+
+header a {
+  text-decoration: none;
+  position: relative;
+}
+
+.container-fluid {
+      padding: 1px 1px;
+      position: relative;
+      background-color: white;
+      background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top:auto;
+  }
+
+ .navbar-default .navbar-toggle {
+      border-color: transparent;
+      text-decoration: none;
+  }
+  
+  .imgsize{
+    display: block;
+    height: auto;
+    width: 75%;
+    border-radius: 5%;
+}
+.profimg{
+   height: auto;
+   width: 30%;
+   border-radius: 50%;
+}
+
+ .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }

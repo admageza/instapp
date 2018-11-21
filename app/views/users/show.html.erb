@@ -1,0 +1,102 @@
+<div class="container" style="margin:30px 1px 5% 15% ">
+  <div class="row">
+    
+    <div class="col-sm-4 text-right">  
+        <%= image_tag @user.image_url, :class => "profimg" %>
+    </div>
+    <div class="col-sm-6 text-left"> 
+     <h1>Welcome, <%= current_user.name %>
+     <button type="button" class="btn btn-outline-primary"><%= link_to 'Edit Profile', edit_user_path(current_user.id) %></button></h1>
+         <table>
+           <% @user ||= current_user %>
+          <div class="stats">
+            <th><a href="<%= user_path(@user.id) %>">
+              <strong id="followers" class="stat">
+                <%= @user.posts.count %>
+              </strong>
+                Posts
+               </a>
+            </th>
+          </div>
+        </table>
+        <table>
+            <% @user ||= current_user %>
+          <div class="stats">
+            <th><a href="<%= user_path(@user.id) %>">
+              <strong id="followers" class="stat">
+                <%= @user.favorites.count %>
+              </strong>
+                 Following
+               </a>
+            </th>
+          </div>
+          </table>
+          <table>
+            <% @user ||= current_user %>
+          <div class="stats">
+            <th><a href="<%= user_path(@user.id) %>">
+              <strong id="followers" class="stat">
+                <%= @user.posts.count %>
+              </strong>
+               Fallowers
+               </a>
+            </th>
+          </div>
+          </table>
+    </div>
+  </div>
+</div>
+
+
+<div class="container text-center" style="margin:30px 1px 5% 5% ">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#home">My POSTS</a></li>
+    <li><a data-toggle="tab" href="#menu1">FAVORITE</a></li>
+    <li><a data-toggle="tab" href="#menu2">IGTV</a></li>
+    <li><a data-toggle="tab" href="#menu3">SAVED</a></li>
+  </ul>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <div class="tab-content text-left" style="margin:30px 1px 5px 1px ">
+   
+    <div id="home" class="tab-pane fade in active">
+      <div class="row slideanim">
+           <% @user.posts.each do |post| %>
+           <div class="col-sm-4 ">
+             <% if post.image.present? %>
+               <p><%= link_to image_tag(post.image.url, :class => "imgsize"), post %></p>
+             <% end %>
+             </div>
+           <% end %>
+     </div>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+      <div class="row slideanim">
+           <% @favorites_posts.each do |post| %>
+           <div class="col-sm-4 "> 
+            <p>
+             <%= image_tag(post.user.image_url, :class => "user") %>
+             <%= post.user.name %>
+            </p>
+             <% if post.image.present? %>
+               <p><%= link_to image_tag(post.image.url, :class => "imgsize"), post %></p>
+             <% end %>
+             </div>
+           <% end %>
+      </div>
+    </div>
+    <div id="menu2" class="tab-pane fade">
+      <h3>Start Sharing to IGTV</h3>
+      <p>Create your channel to start sharing longer vertical videos with your Instagram audience.</p>
+      <button type="button" class="btn btn-outline-primary"><%= link_to 'Get Started', user_path(current_user.id) %></button>
+    </div>
+    <div id="menu3" class="tab-pane fade">
+      <h3>SAVED PECTURES ARE STORED HERE</h3>
+      <p>Coming soon!</p>
+    </div>
+   
+  </div>
+</div>

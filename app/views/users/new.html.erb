@@ -1,0 +1,55 @@
+<div class="container-fluid text-center" style="margin:2% 0 25% 0">
+  <div class="row ">
+      <div class="col-sm-4 text-right">  
+      <!--<img src="/instagra.png" class="img-responsive" alt="Dominic">-->
+      </div>
+    <div class="col-sm-6 text-left">  
+      <h1>Sign up</h1>
+        <% if @user.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@user.errors.count, "error") %> prohibited this @user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+            </ul>
+      </div>
+        <% end %>
+
+        <%= form_with(model: @user, local: true) do |f| %> 
+          <ul>
+           <div class="row col-sm-12 text-left">
+            <li class="col-sm-4"><%= f.label :image %></li>
+            <%= f.file_field :image, id: :user_image %>
+            <li class="col-sm-5"><%= f.hidden_field :image_cache %></li>
+           </div>
+           <br>
+           <div class="row col-sm-12 text-left">
+            <li class="col-sm-4"><%= f.label :name %></li>
+            <li class="col-sm-5"><%= f.text_field :name %></li>
+           </div>
+           <br>
+           <div class="row col-sm-12 text-left"> 
+            <li class="col-sm-4"><%= f.label :email %></li>
+            <li class="col-sm-5"><%= f.email_field :email %></li>
+           </div>
+           <br>
+           <div class="row col-sm-12 text-left"> 
+            <li class="col-sm-4"><%= f.label :password %></li>
+            <li class="col-sm-5"><%= f.password_field :password %></li>
+           </div>
+           <br>
+           <div class="row col-sm-12 text-left"> 
+            <li class="col-sm-4"><%= f.label :password_confirmation %></li>
+            <li class="col-sm-5"><%= f.password_field :password_confirmation %></li>
+           </div>
+           <br>
+           <div class="row col-sm-12 text-center"> 
+            <li class="col-sm-12"><%= f.submit "Create my account" %>
+           </div>
+          </ul>
+       <% end %>
+     <h3>Don't you have account? <button type="button" class="btn btn-outline-primary"><%= link_to "Login", new_session_path %></button> here!</h5>
+   </div>
+  </div>
+</div>
