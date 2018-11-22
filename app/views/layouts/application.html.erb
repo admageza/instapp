@@ -49,7 +49,7 @@
       <li><a class="col-sm-2 nav-link" href="#"><%= link_to "New Post", new_post_path, class:'menu' %></a></li>
       <li><a class="col-sm-1 nav-link" href="#"><%= link_to "Login", new_session_path, class:'menu' %></a></li>
       <li><a class="col-sm-1 nav-link" href="#"><%= link_to "Logout", session_path(current_user.id), method: :delete, class:'menu' %></a></li>
-      <li><a class="col-sm-1 nav-link" href="#"><%= link_to image_tag @user.image_url, :class => "profilelogo" %><%= link_to "", user_path(current_user.id), class:'menu' %></a></li>
+      <li><a class="col-sm-1 nav-link" href="#"><%= link_to image_tag @user.image_url, :class => "profilelogo" %><%= link_to "", user_path(current_user.id) %></a></li>
     
     <% end %>
     </ul>

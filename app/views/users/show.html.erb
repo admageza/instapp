@@ -65,7 +65,7 @@
     <div id="home" class="tab-pane fade in active">
       <div class="row slideanim">
            <% @user.posts.each do |post| %>
-           <div class="col-sm-4 ">
+           <div class="list col-sm-4 ">
              <% if post.image.present? %>
                <p><%= link_to image_tag(post.image.url, :class => "imgsize"), post %></p>
              <% end %>
@@ -76,7 +76,7 @@
     <div id="menu1" class="tab-pane fade">
       <div class="row slideanim">
            <% @favorites_posts.each do |post| %>
-           <div class="col-sm-4 "> 
+           <div class="list col-sm-4 "> 
             <p>
              <%= image_tag(post.user.image_url, :class => "user") %>
              <%= post.user.name %>

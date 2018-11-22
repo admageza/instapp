@@ -10,14 +10,16 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-  <%= form.label :image %>
-  <%= form.file_field :image, id: :post_image %>
-  <%= form.hidden_field :image_cache %>
-</div>
-
-  <div class="actions">
-    <%= form.submit %>
+<ul class="row col-sm-12">
+  <div class="field" style="margin-top:2%">
+     <li class="col-sm-2"><%= form.label :image %></li>
+     <li class="col-sm-4"><%= form.file_field :image, id: :post_image %></li>
+     <li class="col-sm-6"><%= form.hidden_field :image_cache %></li>
+  
   </div>
+
+  <div class="actions" style="margin-top:3%">
+    <li class="col-sm-10"style="margin-left:50%"><%= form.submit %></li>
+  </div>
+</ul>
 <% end %>

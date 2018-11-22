@@ -10,11 +10,11 @@
      </p>
      
         <% if @favorite.present? %>
-          <%= link_to 'Cancel favorites', favorite_path(post_id: @post.id), method: :delete, class: 'btn btn-danger' %>
+          <button type="button" class="btn btn-danger"><%= link_to 'Unlike', favorite_path(post_id: @post.id), method: :delete %></button>
         <% else %>
-          <%= link_to 'To favorite', favorites_path(post_id: @post.id), method: :post, class: 'btn-success' %>
+          <button type="button" , class="btn-success"><%= link_to 'Like', favorites_path(post_id: @post.id), method: :post %></button>
         <% end %>
-          <%= link_to 'Edit', edit_post_path(@post), class: 'btn-primary' %>
+          <button type="button" class="btn-primary"><%= link_to 'Edit', edit_post_path(@post) %></button>
      
       <h2>Comments</h2>
       <%= render @post.comments %>

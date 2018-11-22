@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :require_login, only: [:edit, :update]
+  before_action :require_login, only: [:new, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  before_action :require_author, only: [:edit, :update, :destroy]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
 
   # GET /posts
   # GET /posts.json
@@ -82,13 +82,13 @@ class PostsController < ApplicationController
     end
     
     def require_login
-    unless logged_in?
+     unless logged_in?
       flash[:error] = "You must be logged in to access this section"
       redirect_to new_session_path 
+     end
     end
-  end
   
-   def require_author
+   def correct_user
      redirect_to(new_user_path) unless @post.user == current_user
    end
 end

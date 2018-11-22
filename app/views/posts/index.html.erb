@@ -2,7 +2,7 @@
     <div id="home">
       <div class="row ">
            <% @posts.each do |post| %>
-           <div class="col-sm-4 ">
+           <div class="list col-sm-4 ">
               <p>
                 <%= image_tag(post.user.image_url, :class => "user") %>
                 <%= post.user.name %> 

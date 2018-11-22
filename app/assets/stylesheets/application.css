@@ -24,11 +24,24 @@ body {
   
 .menu{
    color: white;
+   margin-top: 5px;
 }
 
 li{
     list-style:none;
+    padding-bottom: 10px;
 }
+
+button {
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px;
+  text-transform: uppercase;
+}
+
 
 footer {
   width: 100%;
