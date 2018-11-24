@@ -12,6 +12,10 @@
   <% end %>
 <ul class="row col-sm-12">
   <div class="field" style="margin-top:2%">
+     
+     <li class="col-sm-2"><%= form.label :title %></li>
+     <li class="col-sm-10"><%= form.text_field :title %></li>
+ 
      <li class="col-sm-2"><%= form.label :image %></li>
      <li class="col-sm-4"><%= form.file_field :image, id: :post_image %></li>
      <li class="col-sm-6"><%= form.hidden_field :image_cache %></li>

@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
      @favorites_posts = current_user.favorite_posts
+     @comments_posts = current_user.comment_posts
      @posts = current_user.posts
   end
   
@@ -37,6 +38,9 @@ class UsersController < ApplicationController
   
   def favorite
       @favorites_posts = Favorite.find(post_id: params[:post_id])
+  end
+  def comment
+      @comments_posts = Comment.find(post_id: params[:post_id])
   end
   
   def logged_in_user

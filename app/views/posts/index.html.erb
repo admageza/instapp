@@ -7,16 +7,14 @@
                 <%= image_tag(post.user.image_url, :class => "user") %>
                 <%= post.user.name %> 
               </p>
+              <p><%= post.title %></p>
               <p><%= link_to image_tag(post.image.url, :class => "imgsize"), post %></p>
              <% if post.user == current_user %>
-               <%= link_to 'Edit', edit_post_path(post) %>
-               <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+               <button type="button" class="btn btn-primary"><%= link_to 'Edit', edit_post_path(post) %></button>
+               <button type="button" class="btn btn-danger"><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></button>
              <% end %>
              </div>
            <% end %>
      </div>
     </div>
-<br>
-
-<%= link_to 'New Post', new_post_path %>
 </div>

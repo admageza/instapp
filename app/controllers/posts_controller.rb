@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @favorite = current_user.favorites.find_by(post_id: @post.id)
+    @comment = current_user.comments.find_by(post_id: @post.id)
     @posts = current_user.posts
   end
 
@@ -78,7 +79,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:image)
+      params.require(:post).permit(:image, :title)
     end
     
     def require_login

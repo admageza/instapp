@@ -1,15 +1,19 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
- 
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
-<p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
+<div class="container" style="margin:10px 0 10px 0">
+  <div class="row">
+    <div class="col-sm-2 "> 
+      <%= image_tag(comment.user.image_url, :class => "user") %>
+    </div>
+    <div class="col-sm-5 "> 
+     <%= comment.body %>
+    </div>
+    <div class="col-sm-2 "> 
+     <% if comment.user == current_user %>
+     <button type="button" class="btn btn-danger"><%= link_to 'Destroy Comment', [comment.post, comment],
                method: :delete,
-               data: { confirm: 'Are you sure?' } %>
-</p>
+               data: { confirm: 'Are you sure?' } %></button>
+     <% end %>
+    </div>
+  </div>
+</div>
+ 
+   

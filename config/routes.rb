@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     end
     end
   end
+  
+  resources :comments, only: [:create, :destroy]
+
   resources :favorites, only: [:create, :destroy]
   
   get '/login', to: 'sessions#new'
