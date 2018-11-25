@@ -21,9 +21,9 @@
           <button type="button" class="btn btn-primary"><%= link_to 'Edit', edit_post_path(@post) %></button>
          <% end %>
        </p>
-       <p>
+       <div class="comment">
        <%= render @post.comments %>
-       </p>
+       </div>
      <%= render 'comments/form' %>
     </div>
   </div>

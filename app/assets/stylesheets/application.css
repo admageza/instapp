@@ -35,13 +35,15 @@ li{
 button {
   border: none;
   border-radius: 3px;
-  color: white;
+ 
   font-size: 15px;
   font-weight: bold;
   padding: 5px 10px;
   text-transform: uppercase;
 }
-
+.comment{
+  color:black;
+}
 
 footer {
   width: 100%;
