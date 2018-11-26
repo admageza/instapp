@@ -16,10 +16,11 @@
  */
  
 body {
-      font: 400 15px Lato, sans-serif;
+      
       line-height: 1.8;
       color: #818181;
       margin: 1px;
+       width: 100%;
   }
   
 .menu{
@@ -49,10 +50,9 @@ footer {
   width: 100%;
   background-color:#4169E1;
   color: white;
-  margin: auto;
-  padding-bottom: 10px;
+  padding-bottom: 0;
   font-size: 12px;
-  bottom: 0;
+  margin-bottom: auto;
 }
 
 .row {
@@ -73,7 +73,7 @@ header {
 }
 .form-inline{
    height: 1%;
-   width:200px;
+   width:100%;
 }
 header a {
   margin: auto;
@@ -143,7 +143,7 @@ header a {
   @media screen and (max-width: 768px) {
     .col-sm-4 {
       text-align: center;
-      margin: 25px 0;
+      margin: 5px 0;
     }
     .btn-lg {
         width: 100%;
