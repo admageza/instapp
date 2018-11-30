@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  
   mount_uploader :image, ImageUploader
+  
   has_many :posts
   has_many :posts, source: :user
   
